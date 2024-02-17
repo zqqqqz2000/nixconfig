@@ -4,6 +4,7 @@
   imports = [
     ./browsers.nix
     ./nvim.nix
+    ./zsh.nix
   ];
 
   home.username = "qqz";

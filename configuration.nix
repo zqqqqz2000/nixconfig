@@ -95,14 +95,10 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      htop
       nvtop
-      zsh
       tmux
-      screenfetch
       steam-run
       keyd
-      unzip
       jetbrains.webstorm
       jetbrains.pycharm-professional
       jetbrains.goland
@@ -130,12 +126,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    screenfetch
+    neovim
     wget
     neovim
     git
     curl
     nix-index
+    htop
+    unzip
   ];
   environment.variables.EDITOR = "neovim";
   environment.sessionVariables = {
@@ -144,6 +143,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/nixos-24.05" ];
   programs.nix-ld.enable = true;
+  programs.zsh.enable = true;
 
   # OpenGL
   hardware.opengl = {
@@ -184,15 +184,6 @@
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.production;
-  };
-
-  programs.zsh = {
-    enable = true;
-    ohMyZsh = {
-      enable = true;
-      plugins = [ "git" ];
-      theme = "robbyrussell";
-    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
