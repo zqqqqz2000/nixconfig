@@ -11,7 +11,6 @@
   home.homeDirectory = "/home/qqz";
   home.packages = with pkgs;[
     vscode
-    conda
     telegram-desktop
     wpsoffice
     bun
@@ -20,6 +19,18 @@
     _1password-gui
     discord
     qq
+    jq
+    file
+    which
+    tree
+    zstd
+    lsof
+    strace
+    ltrace
+    usbutils
+    lm_sensors
+    nmap
+    nnn
   ];
   home.stateVersion = "23.11";
   programs.home-manager.enable = true;

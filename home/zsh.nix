@@ -10,5 +10,9 @@
       plugins = [ "git" ];
       theme = "robbyrussell";
     };
+
+    shellAliases = {
+      nixos-gc = "nix-env --delete-generations old --profile /nix/var/nix/profiles;nix-store --gc";
+    };
   };
 }
