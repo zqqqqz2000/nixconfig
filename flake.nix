@@ -21,7 +21,8 @@
 		    {
                       home-manager.useGlobalPkgs = true;
 		      home-manager.useUserPackages = true;
-		      home-manager.users.qqz = import ./home.nix;
+		      home-manager.extraSpecialArgs = inputs;
+		      home-manager.users.qqz = import ./home;
 		    }
 		];
 	    };

@@ -95,29 +95,17 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      firefox
-      google-chrome
-      vscode
-      telegram-desktop
-      conda
-      wpsoffice
       htop
       nvtop
       zsh
       tmux
-      bun
-      nodejs
       screenfetch
-      _1password
-      _1password-gui
       steam-run
       keyd
       unzip
       jetbrains.webstorm
       jetbrains.pycharm-professional
       jetbrains.goland
-      discord
-      qq
       gnome3.gnome-tweaks
       libGL
       foundry.defaultPackage."${pkgs.system}"
@@ -155,9 +143,6 @@
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/nixos-24.05" ];
-  programs.neovim = {
-    enable = true;
-  };
   programs.nix-ld.enable = true;
 
   # OpenGL
