@@ -141,7 +141,7 @@
     NIXOS_OZONE_WL = "1";
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/nixos-24.05" ];
+  nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/nixos-unstable" ];
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
 

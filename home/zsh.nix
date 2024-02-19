@@ -12,7 +12,10 @@
     };
 
     shellAliases = {
-      nixos-gc = "nix-env --delete-generations old --profile /nix/var/nix/profiles;nix-store --gc";
+      nixos-gc = "sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system;nix-store --gc";
+      q = "exit";
+      work = "cd ~/Documents/projects";
+      config = "cd /etc/nixos";
     };
   };
 }
