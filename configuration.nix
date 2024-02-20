@@ -92,7 +92,7 @@
   users.users.qqz = {
     isNormalUser = true;
     description = "qqz";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       nvtop
@@ -107,6 +107,8 @@
       foundry.defaultPackage."${pkgs.system}"
     ];
   };
+
+  virtualisation.docker.enable = true;
 
   services.keyd = {
     enable = true;
@@ -141,7 +143,7 @@
     NIXOS_OZONE_WL = "1";
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/nixos-unstable" ];
+  nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" "https://cache.nixos.org/" ];
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
 
