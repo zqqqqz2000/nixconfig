@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./services/no-rgb.nix
     ];
 
   # Bootloader.
@@ -51,6 +52,9 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+
+  # showdown all rgb
+  systemd.services.no-rgb.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -104,6 +108,7 @@
       jetbrains.goland
       gnome3.gnome-tweaks
       libGL
+      openrgb
       foundry.defaultPackage."${pkgs.system}"
     ];
   };
@@ -185,7 +190,7 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.production;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
